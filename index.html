@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MASTERCALL AI | GOD MODE</title>
+    <title>MASTERCALL AI V4.0</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -12,24 +12,22 @@
         .slide { display: none; }
         .active { display: block; animation: fadeIn 0.3s; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .nav-btn.active-nav { background: #3b82f6; color: white; box-shadow: 0 0 15px rgba(59, 130, 246, 0.3); }
+        .nav-btn.active-nav { background: #3b82f6; color: white; box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); }
     </style>
 </head>
-<body class="p-4 bg-black text-xs">
+<body class="p-4">
 
     <div class="max-w-md mx-auto mb-6 grid grid-cols-4 gap-2 glass p-2 rounded-2xl sticky top-0 z-50">
         <button onclick="showSlide(1)" id="nav1" class="nav-btn active-nav p-3 rounded-xl"><i class="fa-solid fa-house"></i></button>
         <button onclick="showSlide(2)" id="nav2" class="nav-btn p-3 rounded-xl glass text-gray-500"><i class="fa-solid fa-chart-line"></i></button>
-        <button onclick="showSlide(3)" id="nav3" class="nav-btn p-3 rounded-xl glass text-gray-500"><i class="fa-solid fa-calendar-days"></i></button>
+        <button onclick="showSlide(3)" id="nav3" class="nav-btn p-3 rounded-xl glass text-gray-500"><i class="fa-solid fa-calendar"></i></button>
         <button onclick="showSlide(4)" id="nav4" class="nav-btn p-3 rounded-xl glass text-gray-500"><i class="fa-solid fa-robot"></i></button>
     </div>
 
-    <div id="slide1" class="slide active max-w-md mx-auto">
-        <div class="glass p-10 rounded-[2.5rem] text-center mb-6">
-            <h2 id="livePrice" class="text-6xl font-black mb-2 tracking-tighter font-mono">$0.00</h2>
-            <p class="text-blue-500 font-bold tracking-[0.3em] flex items-center justify-center gap-2 uppercase">
-                <span class="w-2 h-2 bg-blue-500 rounded-full animate-ping"></span> Live Market
-            </p>
+    <div id="slide1" class="slide active max-w-md mx-auto text-center">
+        <div class="glass p-10 rounded-[2.5rem] mb-6">
+            <h2 id="livePrice" class="text-6xl font-black mb-2 tracking-tighter font-mono text-white">$0.00</h2>
+            <p class="text-blue-500 text-[10px] font-bold tracking-[0.3em] uppercase">Market Live</p>
         </div>
     </div>
 
@@ -44,32 +42,31 @@
     <div id="slide4" class="slide max-w-md mx-auto">
         <div class="glass p-6 rounded-[2rem] border-t-4 border-blue-600">
             <div class="flex justify-between items-center mb-4">
-                <h3 class="font-bold text-gray-500 uppercase">MasterCall AI</h3>
-                <span id="aiMode" class="px-3 py-1 rounded-full text-[9px] font-black bg-blue-600 uppercase">--</span>
+                <span id="aiMode" class="px-3 py-1 rounded-full text-[9px] font-black bg-blue-600">SCANNING...</span>
+                <span id="terminalStatus" class="text-[8px] text-gray-500 font-mono">--</span>
             </div>
             
             <div class="grid grid-cols-5 gap-1 mb-6">
-                <div class="p-2 bg-white/5 rounded-lg text-center"><p class="text-gray-500">M1</p><p id="valM1" class="font-bold">--</p></div>
-                <div class="p-2 bg-white/5 rounded-lg text-center"><p class="text-gray-500">M5</p><p id="valM5" class="font-bold">--</p></div>
-                <div class="p-2 bg-white/5 rounded-lg text-center"><p class="text-gray-500">M15</p><p id="valM15" class="font-bold">--</p></div>
-                <div class="p-2 bg-white/5 rounded-lg text-center"><p class="text-gray-500">H1</p><p id="valH1" class="font-bold">--</p></div>
-                <div class="p-2 bg-blue-600/20 rounded-lg text-center"><p class="text-blue-400">H4</p><p id="valH4" class="font-bold">--</p></div>
+                <div class="p-2 bg-white/5 rounded-lg text-center"><p class="text-[8px] text-gray-500">M1</p><p id="valM1" class="text-[9px] font-bold">--</p></div>
+                <div class="p-2 bg-white/5 rounded-lg text-center"><p class="text-[8px] text-gray-500">M5</p><p id="valM5" class="text-[9px] font-bold">--</p></div>
+                <div class="p-2 bg-white/5 rounded-lg text-center"><p class="text-[8px] text-gray-500">M15</p><p id="valM15" class="text-[9px] font-bold">--</p></div>
+                <div class="p-2 bg-white/5 rounded-lg text-center"><p class="text-[8px] text-gray-500">H1</p><p id="valH1" class="text-[9px] font-bold">--</p></div>
+                <div class="p-2 bg-blue-600/20 rounded-lg text-center"><p class="text-[8px] text-blue-400">H4</p><p id="valH4" class="text-[9px] font-bold">--</p></div>
             </div>
 
-            <div class="bg-white/5 p-4 rounded-2xl mb-4 border-l-4 border-blue-500">
-                <p id="terminalBias" class="text-xl font-black text-white uppercase">--</p>
+            <div class="bg-white/5 p-4 rounded-2xl mb-4">
+                <p id="terminalBias" class="text-xl font-black text-white">READY TO SCAN</p>
             </div>
 
-            <div class="space-y-3 mb-6">
-                <div class="flex justify-between p-4 glass rounded-xl"><span>TARGET TP</span><span id="terminalTP" class="text-green-400 font-bold font-mono">--</span></div>
-                <div class="flex justify-between p-4 glass rounded-xl"><span>STOP LOSS</span><span id="terminalSL" class="text-red-400 font-bold font-mono">--</span></div>
+            <div class="space-y-2 text-xs">
+                <div class="flex justify-between p-3 glass rounded-xl"><span>TARGET TP</span><span id="terminalTP" class="text-green-400 font-bold">--</span></div>
+                <div class="flex justify-between p-3 glass rounded-xl"><span>STOP LOSS</span><span id="terminalSL" class="text-red-400 font-bold">--</span></div>
             </div>
-            <p id="terminalStatus" class="text-center text-[9px] text-gray-600 font-bold uppercase tracking-widest">--</p>
         </div>
     </div>
 
     <script>
-        const API_URL = "https://fast-api-server--rezkyalfayed56.replit.app";
+        const API_URL = "https://fast-api-server--rezkyalfayed56.replit.app"; // PASTIIN INI BENER!
 
         function showSlide(num) {
             document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
@@ -78,9 +75,7 @@
                 b.classList.add('glass', 'text-gray-500');
             });
             document.getElementById('slide' + num).classList.add('active');
-            const active = document.getElementById('nav' + num);
-            active.classList.add('active-nav');
-            active.classList.remove('glass', 'text-gray-500');
+            document.getElementById('nav' + num).classList.add('active-nav');
         }
 
         async function fetchSignal() {
@@ -88,29 +83,31 @@
                 const res = await fetch(`${API_URL}/analyze`);
                 const data = await res.json();
                 
-                document.getElementById('livePrice').innerText = `$${data.price}`;
-                document.getElementById('terminalBias').innerText = data.bias;
-                document.getElementById('terminalTP').innerText = data.tp_data;
-                document.getElementById('terminalSL').innerText = data.sl_data;
-                document.getElementById('aiMode').innerText = data.mode;
-                document.getElementById('terminalStatus').innerText = data.status;
+                // Update UI dengan aman
+                document.getElementById('livePrice').innerText = `$${data.price || '0.00'}`;
+                document.getElementById('terminalBias').innerText = data.bias || 'WAITING';
+                document.getElementById('aiMode').innerText = data.mode || 'SCANNING';
+                document.getElementById('terminalTP').innerText = data.tp_data || '--';
+                document.getElementById('terminalSL').innerText = data.sl_data || '--';
+                document.getElementById('terminalStatus').innerText = data.status || '--';
 
-                document.getElementById('valM1').innerText = data.m1;
-                document.getElementById('valM5').innerText = data.m5;
-                document.getElementById('valM15').innerText = data.m15;
-                document.getElementById('valH1').innerText = data.h1;
-                document.getElementById('valH4').innerText = data.h4;
+                const tfs = ['M1','M5','M15','H1','H4'];
+                tfs.forEach(tf => {
+                    const el = document.getElementById('val' + tf);
+                    const val = data[tf.toLowerCase()];
+                    el.innerText = val || '--';
+                    el.style.color = val === "BULLISH" ? "#4ade80" : "#f87171";
+                });
 
+                // Efek God Mode
                 const badge = document.getElementById('aiMode');
-                if(data.mode.includes("GOD")) badge.className = "px-3 py-1 rounded-full text-[9px] font-black bg-yellow-500 text-black animate-bounce";
-                else if(data.mode.includes("STRONG")) badge.className = "px-3 py-1 rounded-full text-[9px] font-black bg-red-600 text-white animate-pulse";
+                if(data.mode && data.mode.includes("GOD")) badge.className = "px-3 py-1 rounded-full text-[9px] font-black bg-yellow-500 text-black animate-bounce";
                 else badge.className = "px-3 py-1 rounded-full text-[9px] font-black bg-blue-600 text-white";
 
-                ['valM1','valM5','valM15','valH1','valH4'].forEach(id => {
-                    const el = document.getElementById(id);
-                    el.style.color = el.innerText === "BULLISH" ? "#4ade80" : "#f87171";
-                });
-            } catch (e) { console.log("Retrying..."); }
+            } catch (e) {
+                console.log("Koneksi Replit Putus/Salah URL");
+                document.getElementById('terminalBias').innerText = "CONNECTING...";
+            }
         }
 
         function syncClock() {
