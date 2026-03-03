@@ -3,126 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MASTERCALL AI | V4.0 ELITE</title>
+    <title>MASTERCALL AI | GOD MODE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background-color: #050505; color: #f4f4f5; font-family: 'Inter', sans-serif; overflow-x: hidden; }
-        .glass { background: rgba(15, 15, 16, 0.85); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        .slide { display: none; animation: slideIn 0.3s ease-out; }
-        .active { display: block; }
-        @keyframes slideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .nav-btn.active-nav { background: #3b82f6; color: white; box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); }
-        iframe { border-radius: 16px; border: none; }
+        body { background-color: #050505; color: white; font-family: sans-serif; overflow: hidden; }
+        .glass { background: rgba(20, 20, 20, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.05); }
+        .slide { display: none; }
+        .active { display: block; animation: fadeIn 0.3s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .nav-btn.active-nav { background: #3b82f6; color: white; box-shadow: 0 0 15px rgba(59, 130, 246, 0.3); }
     </style>
 </head>
-<body class="p-4">
+<body class="p-4 bg-black text-xs">
 
-    <div class="max-w-md mx-auto mb-6 grid grid-cols-4 gap-2 glass p-2 rounded-2xl sticky top-2 z-50">
-        <button onclick="showSlide(1)" id="nav1" class="nav-btn active-nav p-3 rounded-xl text-xs transition-all"><i class="fa-solid fa-house"></i></button>
-        <button onclick="showSlide(2)" id="nav2" class="nav-btn p-3 rounded-xl text-xs transition-all glass text-gray-500"><i class="fa-solid fa-chart-line"></i></button>
-        <button onclick="showSlide(3)" id="nav3" class="nav-btn p-3 rounded-xl text-xs transition-all glass text-gray-500"><i class="fa-solid fa-calendar-days"></i></button>
-        <button onclick="showSlide(4)" id="nav4" class="nav-btn p-3 rounded-xl text-xs transition-all glass text-gray-500"><i class="fa-solid fa-robot"></i></button>
+    <div class="max-w-md mx-auto mb-6 grid grid-cols-4 gap-2 glass p-2 rounded-2xl sticky top-0 z-50">
+        <button onclick="showSlide(1)" id="nav1" class="nav-btn active-nav p-3 rounded-xl"><i class="fa-solid fa-house"></i></button>
+        <button onclick="showSlide(2)" id="nav2" class="nav-btn p-3 rounded-xl glass text-gray-500"><i class="fa-solid fa-chart-line"></i></button>
+        <button onclick="showSlide(3)" id="nav3" class="nav-btn p-3 rounded-xl glass text-gray-500"><i class="fa-solid fa-calendar-days"></i></button>
+        <button onclick="showSlide(4)" id="nav4" class="nav-btn p-3 rounded-xl glass text-gray-500"><i class="fa-solid fa-robot"></i></button>
     </div>
 
     <div id="slide1" class="slide active max-w-md mx-auto">
-        <div class="glass p-8 rounded-[2.5rem] text-center mb-6">
-            <p class="text-blue-500 text-[10px] font-black uppercase tracking-widest mb-2">Gold Live Price</p>
-            <h2 id="livePrice" class="text-5xl font-black mb-2 tracking-tighter text-white font-mono">$0.00</h2>
-            <p class="text-gray-500 text-[10px]">XAUUSD • Real-time Stream</p>
-        </div>
-        <button onclick="getSignal()" class="w-full bg-blue-600 hover:bg-blue-500 py-4 rounded-2xl font-black text-xs transition-all active:scale-95 shadow-lg shadow-blue-900/20">
-            RUN AI ANALYSIS
-        </button>
-    </div>
-
-    <div id="slide2" class="slide max-w-md mx-auto">
-        <div class="glass p-2 rounded-3xl h-[500px]">
-            <div class="tradingview-widget-container" style="height:100%;width:100%">
-                <iframe src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_1&symbol=OANDA%3AXAUUSD&interval=15&hidesidetoolbar=1&hidetoptoolbar=1&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=MA%40tv-basicstudies&theme=dark&style=1&timezone=Asia%2FJakarta" style="width: 100%; height: 100%;"></iframe>
-            </div>
+        <div class="glass p-10 rounded-[2.5rem] text-center mb-6">
+            <h2 id="livePrice" class="text-6xl font-black mb-2 tracking-tighter font-mono">$0.00</h2>
+            <p class="text-blue-500 font-bold tracking-[0.3em] flex items-center justify-center gap-2 uppercase">
+                <span class="w-2 h-2 bg-blue-500 rounded-full animate-ping"></span> Live Market
+            </p>
         </div>
     </div>
 
-    <div id="slide3" class="slide max-w-md mx-auto">
-        <div class="glass p-2 rounded-3xl h-[500px] overflow-hidden">
-            <h3 class="text-center text-[10px] font-bold py-2 text-gray-400 uppercase">Global Economic Calendar</h3>
-            <iframe src="https://www.widgets.investing.com/live-economic-calendar?theme=darkTheme&roundedCorners=true&countries=5&events=1,2,3&importance=2,3&timeZone=28&lang=1" width="100%" height="90%" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe>
-        </div>
+    <div id="slide2" class="slide max-w-md mx-auto h-[480px]">
+        <iframe src="https://s.tradingview.com/widgetembed/?symbol=OANDA%3AXAUUSD&interval=15&theme=dark" width="100%" height="100%" frameborder="0" style="border-radius:24px;"></iframe>
+    </div>
+
+    <div id="slide3" class="slide max-w-md mx-auto h-[480px] overflow-hidden rounded-[24px]">
+        <iframe src="https://sslecal2.investing.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&category=_main&importance=2,3&features=datepicker,timezone&countries=5&calType=day&timeZone=15&lang=1" width="100%" height="100%" frameborder="0"></iframe>
     </div>
 
     <div id="slide4" class="slide max-w-md mx-auto">
         <div class="glass p-6 rounded-[2rem] border-t-4 border-blue-600">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="font-black text-lg">AI OUTPUT</h3>
-                <span id="terminalStatus" class="text-[9px] px-3 py-1 rounded-full border border-blue-500 text-blue-400 font-bold uppercase">READY</span>
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-bold text-gray-500 uppercase">MasterCall AI</h3>
+                <span id="aiMode" class="px-3 py-1 rounded-full text-[9px] font-black bg-blue-600 uppercase">--</span>
             </div>
             
-            <div class="grid grid-cols-2 gap-3 mb-4 text-[11px]">
-                <div class="p-4 bg-white/5 rounded-2xl border border-white/5">
-                    <p class="text-gray-500 mb-1 uppercase">Bias</p>
-                    <p id="terminalBias" class="font-bold text-white">--</p>
-                </div>
-                <div class="p-4 bg-white/5 rounded-2xl border border-white/5">
-                    <p class="text-gray-500 mb-1 uppercase">Structure</p>
-                    <p id="terminalMS" class="font-bold text-white text-[10px]">--</p>
-                </div>
+            <div class="grid grid-cols-5 gap-1 mb-6">
+                <div class="p-2 bg-white/5 rounded-lg text-center"><p class="text-gray-500">M1</p><p id="valM1" class="font-bold">--</p></div>
+                <div class="p-2 bg-white/5 rounded-lg text-center"><p class="text-gray-500">M5</p><p id="valM5" class="font-bold">--</p></div>
+                <div class="p-2 bg-white/5 rounded-lg text-center"><p class="text-gray-500">M15</p><p id="valM15" class="font-bold">--</p></div>
+                <div class="p-2 bg-white/5 rounded-lg text-center"><p class="text-gray-500">H1</p><p id="valH1" class="font-bold">--</p></div>
+                <div class="p-2 bg-blue-600/20 rounded-lg text-center"><p class="text-blue-400">H4</p><p id="valH4" class="font-bold">--</p></div>
             </div>
 
-            <div class="space-y-2">
-                <div class="flex justify-between p-4 glass rounded-xl text-xs">
-                    <span class="text-gray-400 uppercase">Target TP</span> 
-                    <span id="terminalTP" class="text-green-400 font-mono font-bold text-sm">--</span>
-                </div>
-                <div class="flex justify-between p-4 glass rounded-xl text-xs">
-                    <span class="text-gray-400 uppercase">Stop Loss</span> 
-                    <span id="terminalSL" class="text-red-400 font-mono font-bold text-sm">--</span>
-                </div>
+            <div class="bg-white/5 p-4 rounded-2xl mb-4 border-l-4 border-blue-500">
+                <p id="terminalBias" class="text-xl font-black text-white uppercase">--</p>
             </div>
+
+            <div class="space-y-3 mb-6">
+                <div class="flex justify-between p-4 glass rounded-xl"><span>TARGET TP</span><span id="terminalTP" class="text-green-400 font-bold font-mono">--</span></div>
+                <div class="flex justify-between p-4 glass rounded-xl"><span>STOP LOSS</span><span id="terminalSL" class="text-red-400 font-bold font-mono">--</span></div>
+            </div>
+            <p id="terminalStatus" class="text-center text-[9px] text-gray-600 font-bold uppercase tracking-widest">--</p>
         </div>
     </div>
 
     <script>
-        // GANTI INI DENGAN LINK REPLIT LO!
         const API_URL = "https://fast-api-server--rezkyalfayed56.replit.app";
 
         function showSlide(num) {
             document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('.nav-btn').forEach(b => {
-                b.classList.remove('active-nav', 'text-white');
+                b.classList.remove('active-nav');
                 b.classList.add('glass', 'text-gray-500');
             });
             document.getElementById('slide' + num).classList.add('active');
-            const activeNav = document.getElementById('nav' + num);
-            activeNav.classList.add('active-nav', 'text-white');
-            activeNav.classList.remove('glass', 'text-gray-500');
+            const active = document.getElementById('nav' + num);
+            active.classList.add('active-nav');
+            active.classList.remove('glass', 'text-gray-500');
         }
 
-        async function getSignal() {
-            const btn = document.querySelector('button[onclick="getSignal()"]');
-            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i>';
-            
+        async function fetchSignal() {
             try {
                 const res = await fetch(`${API_URL}/analyze`);
                 const data = await res.json();
-
-                // Sinkronisasi data ke ID (Pastiin namanya sama dengan Python)
+                
                 document.getElementById('livePrice').innerText = `$${data.price}`;
                 document.getElementById('terminalBias').innerText = data.bias;
-                document.getElementById('terminalMS').innerText = data.structure;
-                document.getElementById('terminalTP').innerText = data.tp;
-                document.getElementById('terminalSL').innerText = data.sl;
+                document.getElementById('terminalTP').innerText = data.tp_data;
+                document.getElementById('terminalSL').innerText = data.sl_data;
+                document.getElementById('aiMode').innerText = data.mode;
                 document.getElementById('terminalStatus').innerText = data.status;
 
-                // Auto-move ke slide hasil
-                setTimeout(() => showSlide(4), 400);
+                document.getElementById('valM1').innerText = data.m1;
+                document.getElementById('valM5').innerText = data.m5;
+                document.getElementById('valM15').innerText = data.m15;
+                document.getElementById('valH1').innerText = data.h1;
+                document.getElementById('valH4').innerText = data.h4;
 
-            } catch (err) {
-                alert("Server Offline! Pastikan Replit sudah di-RUN.");
-            } finally {
-                btn.innerHTML = 'RUN AI ANALYSIS';
-            }
+                const badge = document.getElementById('aiMode');
+                if(data.mode.includes("GOD")) badge.className = "px-3 py-1 rounded-full text-[9px] font-black bg-yellow-500 text-black animate-bounce";
+                else if(data.mode.includes("STRONG")) badge.className = "px-3 py-1 rounded-full text-[9px] font-black bg-red-600 text-white animate-pulse";
+                else badge.className = "px-3 py-1 rounded-full text-[9px] font-black bg-blue-600 text-white";
+
+                ['valM1','valM5','valM15','valH1','valH4'].forEach(id => {
+                    const el = document.getElementById(id);
+                    el.style.color = el.innerText === "BULLISH" ? "#4ade80" : "#f87171";
+                });
+            } catch (e) { console.log("Retrying..."); }
         }
+
+        function syncClock() {
+            if (new Date().getSeconds() === 0) {
+                fetchSignal();
+                setTimeout(syncClock, 2000);
+            } else { setTimeout(syncClock, 500); }
+        }
+
+        syncClock();
+        fetchSignal();
     </script>
 </body>
 </html>
